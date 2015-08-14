@@ -1,0 +1,4 @@
+config {
+#	tx_realurl_enable = 1
+#	absRefPrefix = http://localhost:8090/
+}

@@ -1,0 +1,12 @@
+lib.getBodyClass = CASE
+lib.getBodyClass {
+	key.data = field : backend_layout // levelfield : -1, backend_layout_next_level, slide
+	5 = TEXT
+	5.value = homepage
+	6 = TEXT
+	6.value = left-sidebar
+	7 = TEXT
+	7.value = right-sidebar
+	default = TEXT
+	default.value = no-sidebar
+}

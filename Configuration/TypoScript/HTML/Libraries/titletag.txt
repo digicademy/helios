@@ -1,0 +1,28 @@
+temp.titletag = TEXT
+temp.titletag {
+
+	wrap = <title> | </title>
+
+	htmlSpecialChars = 1
+
+	postCObject = TEXT
+	postCObject.value = Helios
+	postCObject.noTrimWrap = | : ||
+
+	prepend = TEXT
+	prepend.char = 9
+
+	append = TEXT
+	append.char = 10
+
+	cObject = COA
+	cObject {
+
+		10 = TEXT
+		10 {
+			field = subtitle // title // navtitle
+		}
+
+	}
+
+}

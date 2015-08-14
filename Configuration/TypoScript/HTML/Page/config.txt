@@ -1,0 +1,69 @@
+config {
+
+	## basic settings ##
+
+	doctype = html5
+	htmlTag_setParams = lang="de"
+
+	## charset and language ##
+
+	renderCharset = utf-8
+	metaCharset = utf-8
+	language = de
+	locale_all = de_DE.utf8
+	dateFormat = %A %e. %B %Y
+	timeFormat = Time %H:%M Sec %S
+	sys_language_uid = 0
+	sys_language_mode = content_fallback
+	sys_language_overlay = hideNonTranslated
+
+	## administrative functions ##
+
+	admPanel = 0
+	disablePrefixComment = 1
+
+	## cache ##
+
+	no_cache = 1
+	cache_period = 86400
+
+	## email ##
+
+	notification_email_encoding = base64
+	notification_email_urlmode = 76
+	notification_email_charset = utf-8
+
+	spamProtectEmailAddresses = ascii
+
+	## CSS/JS ##
+
+	inlineStyle2TempFile = 1
+	moveJsFromHeaderToFooter = 1
+
+	removeDefaultJS = 1
+	removeDefaultCss = 1
+
+	minifyJS = 0
+	compressJS = 0
+
+	minifyCSS = 0
+	compressCss = 0
+
+	## filenames ##
+
+	meaningfulTempFilePrefix = 1
+
+	## links ##
+
+	intTarget =
+	extTarget =
+	linkVars = L(0-1)
+#	typolinkCheckRootline = 1
+#	typolinkEnableLinksAcrossDomains = 1
+
+	## pagetitle @see head.txt ##
+	noPageTitle = 2
+
+	## no body tag, done with Fluid ##
+	disableBodyTag = 1
+}

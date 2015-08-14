@@ -1,0 +1,563 @@
+#################################################################
+# MOD: Options for the backend modules							#
+#################################################################
+
+# bug 000325 > disable quickedit
+mod.web_layout.menu.function.0 = 0
+
+mod {
+
+	web_layout {
+#		disableAdvanced = 1
+#		noCreateRecordsLink = 1
+#		disableNewContentElementWizard = 1
+		menu.function {
+
+			# columns view
+			1 = 1
+
+			# Language view
+			2 = 0
+
+			# Info view
+			3 = 0
+		}
+	}
+
+	web_list {
+#		noCreateRecordsLink = 1
+
+#		disableNewContentElementWizard = 1
+
+#		only tables listed here will have a link to "create new"
+#		allowedNewTables =
+#		hideTables =
+
+#		index.php of that extension will be used for creating new el
+#		newPageWiz.overrideWithExtension = templavoila
+
+#		what happens when a user clicks the title in the list
+#		clickTitleMode = edit,info,show
+
+		itemsLimitSingleTable = 100
+		itemsLimitPerTable = 20
+
+	}
+
+	web_info.menu.function {
+#		tx_cms_webinfo_page = 0
+#		tx_belog_webinfo = 0
+#		tx_infopagetsconfig_webinfo = 0
+#		tx_cms_webinfo_hits = 0
+#		tx_indexedsearch_modfunc1 = 0
+	}
+
+	web_func.menu {
+		function {
+#			tx_funcwizards_webfunc = 0
+		}
+		wiz {
+#			tx_wizardcrpages_webfunc_2 = 0
+#			tx_wizardsortpages_webfunc_2 = 0
+		}
+	}
+
+	web_ts.menu.function {
+		# nothing since only admins use it
+	}
+
+	xMOD_alt_doc {
+		disableDocSelector = 1
+#		disableCacheSelector = 1
+	}
+
+#	wizards.newRecord {
+#	}
+
+	wizards.newContentElement {
+		wizardItems {
+			common {
+				show = header,text,textpic,table
+				elements {
+					header {
+						title = Überschrift
+						description = Eine Überschrift bestimmter Ordnung
+					}
+					text {
+						title = Text
+						description = Ein Textblock mit Formatierungsmöglichkeiten
+					}
+					textpic {
+						title = Bild und Text
+						description = Ein Bild mit zugehörigem Textblock, freistehend oder umfließend
+					}
+					table {
+						title = Tabelle
+						description = Einfacher Tabellenbaustein
+					}
+				}
+			}
+		}
+	}
+
+#	mod.tools_em {
+#	}
+
+}
+
+#################################################################
+# TCEMAIN: Extra configuration for the form fields				#
+#################################################################
+
+
+TCEMAIN {
+	permissions {
+
+		# Owner be_users UID for new pages:
+		userid =
+
+		# Owner be_groups UID for new pages:
+		groupid = 1
+
+		# User can do anything (default):
+		user = 31
+
+		# Group can do anything, normally "delete" is disabled
+		group = 31
+
+		# Everybody can can do nothing
+		everybody =
+
+	}
+
+#	clearCache_
+
+	table {
+		pages {
+			disablePrependAtCopy = 1
+			disableHideAtCopy = 1
+		}
+		tt_content {
+			disablePrependAtCopy = 1
+			disableHideAtCopy = 1
+		}
+		tx_news_domain_model_news {
+			disablePrependAtCopy = 1
+		}
+	}
+
+}
+
+#################################################################
+# TCEFORM: Extra configuration for the form fields				#
+#################################################################
+
+TCEFORM.pages {
+
+	abstract.disabled = 1
+	alias.disabled = 1
+	author.disabled = 1
+	author_email.disabled = 1
+
+	backend_layout_next_level {
+		removeItems= -1
+	}
+
+	backend_layout {
+		removeItems= -1
+	}
+
+	cache_tags.disabled = 1
+	cache_timeout.disabled = 1
+	content_from_pid.disabled = 1
+	description.disabled = 1
+
+	doktype {
+		removeItems = 2,3,5,6,7,255
+		altLabels {
+			1 = Seite
+#			2 = Advanced
+#			3 = External URL
+			4 = Shortcut
+#			5 = Not in menu
+#			6 = Backend User Section
+#			7 = Mount Point
+#			199 = Spacer
+#			254 = Sysfolder
+#			255 = Recycler
+		}
+	}
+
+	editlock.disabled = 1
+	endtime.disabled = 1
+	extendToSubpages.disabled = 1
+	fe_group.disabled = 1
+	fe_login_mode.disabled = 1
+#	is_siteroot.disabled = 1
+	keywords.disabled = 1
+	l18n_cfg.disabled = 1
+	lastUpdated.disabled = 1
+
+	layout {
+		disabled = 1
+		removeItems =
+		altLabels {
+			0 =
+			1 =
+			2 =
+			3 =
+		}
+	}
+
+	media.disabled = 1
+	module.disabled = 1
+	mount_pid.disabled = 1
+	mount_pid_ol.disabled = 1
+	nav_title.disabled = 1
+	newUntil.disabled = 1
+	no_cache.disabled = 1
+	no_search.disabled = 1
+	php_tree_stop.disabled = 1
+	shortcut_mode.disabled = 1
+	starttime.disabled = 1
+	storage_pid.disabled = 0
+	subtitle.disabled = 1
+	target.disabled = 1
+	tx_impexp_origuid.disabled = 1
+	url.disabled = 1
+	urltype.disabled = 1
+	url_scheme.disabled = 1
+	categories.disabled = 1
+}
+
+
+TCEFORM.pages_language_overlay {
+	starttime.disabled = 1
+	endtime.disabled = 1
+	description.disabled = 1
+	abstract.disabled = 1
+	keywords.disabled = 1
+	nav_title.disabled = 1
+}
+
+
+TCEFORM.tt_content {
+
+	accessibility_title.disabled = 1
+	accessibility_bypass {
+		label = Zweite Menüebene aktivieren
+	}
+
+	accessibility_bypass_text.disabled = 1
+	altText.disabled = 1
+
+	bodytext {
+		RTEfullScreenWidth= 100%
+	}
+
+#   Deprecated as of TYPO3 6.0?
+	colPos {
+#		disabled = 1
+
+#		removeItems = 1,2,3
+
+#		altLabels {
+#			0 = Maincontent
+			#1 = Left
+			#2 = Right
+			#3 = Border
+#		}
+	}
+
+	cols.disabled = 1
+
+	CType {
+		# header, text, image, textpic, bullets, uploads, table, multimedia, swfobject, qtobject, media, mailform, search, menu, shortcut, list, div, html, default, login, gridelements_pi1
+		removeItems = image,media,search,menu,shortcut,html,mailform,table,bullets,uploads,multimedia,div,script
+	}
+
+	date.disabled = 1
+
+	endtime.disabled = 1
+
+	fe_group.disabled = 1
+	filelink_size.disabled = 1
+
+	header {
+		types {
+#			text.disabled = 1
+#			image.disabled = 1
+#			textpic.disabled = 1
+#			table.disabled = 1
+#			bullets.disabled = 1
+#			uploads.disabled = 1
+#			multimedia.disabled = 1
+#			swfobject.disabled = 1
+#			qtobject.disabled = 1
+#			media.disabled = 1
+#			mailform.disabled = 1
+#			search.disabled = 1
+#			menu.disabled = 1
+#			shortcut.disabled = 1
+#			list.disabled = 1
+#			div.disabled = 1
+#			html.disabled = 1
+#			default.disabled = 1
+#			login.disabled = 1
+#			gridelements_pi1.disabled = 1
+		}
+	}
+
+	header_layout {
+		removeItems = 0,1
+		altLabels {
+			1 = H1
+			2 = H2
+			3 = H3
+			4 = H4
+			5 = H5
+		}
+		types {
+#			header.disabled = 0
+#			text.disabled = 1
+#			image.disabled = 1
+#			textpic.disabled = 1
+#			table.disabled = 1
+#			bullets.disabled = 1
+#			uploads.disabled = 1
+#			multimedia.disabled = 1
+#			swfobject.disabled = 1
+#			qtobject.disabled = 1
+#			media.disabled = 1
+#			mailform.disabled = 1
+#			search.disabled = 1
+#			menu.disabled = 1
+#			shortcut.disabled = 1
+#			list.disabled = 1
+#			div.disabled = 1
+#			html.disabled = 1
+#			default.disabled = 1
+#			login.disabled = 1
+#			gridelements_pi1.disabled = 1
+		}
+	}
+
+	header_link.disabled = 1
+	header_position.disabled = 1
+	hidden.disabled = 0
+
+	image.disabled = 0
+	imageheight.disabled = 1
+	imagewidth.disabled = 1
+	image_noRows.disabled = 1
+	imageborder.disabled = 1
+
+	image_frames {
+		disabled = 1
+#		label = Bildbeschnitt
+#		removeItems = 3,4,5,6,7,8
+#		altLabels {
+#			1 = horizontal rechteckig
+#			2 = quadratisch
+#		}
+	}
+
+	imagecaption.disabled = 0
+
+
+	imagecols {
+
+		disabled = 0
+
+		label = Verhältnis Bild zu Text (nur horizontale Varianten)
+
+		removeItems = 1,2,3,5,7
+		addItems.12 = volle Breite
+
+		altLabels {
+#			3 = 25/75
+			4 = 33/66
+			6 = 50/50
+			8 = 66/33
+			12 = volle Breite
+
+#			3 = 20/80
+#			5 = 30/70
+#			7 = 40/60
+#			8 = 50/50
+		}
+	}
+	imagecols.disabled = 1
+
+	imageorient {
+		removeItems = 1,2,8,9,10
+		altLabels {
+			0 = Über dem Text
+#			1 = Above right
+#			2 = Above left
+#			8 = Below center
+#			9 = Below right
+#			10 = Below left
+#			17 = In text right
+#			18 = In text left
+#			25 = In text right, nowrap
+#			26 = In Text left, nowrap
+		}
+	}
+
+	imageorient.disabled = 1
+	image_zoom.disabled = 1
+
+	image_compression {
+		disabled = 1
+#		removeItems =
+	}
+
+	image_effects {
+		disabled = 1
+#		removeItems = 1,2,3,11,20,23,25,26
+	}
+
+	imagecaption_position {
+		disabled = 1
+#		removeItems =
+	}
+
+	layout {
+		types {
+			header.disabled = 1
+			text.disabled = 1
+#			image {
+#				removeItems = 0,3
+#				altLabels {
+#					1 = Freistehend
+#					2 = Umfließend
+#				}
+#			}
+			image.disabled = 1
+			textpic.disabled = 1
+			table {
+				disabled = 1
+				removeItems = 0, 1, 2, 3, 4
+				altLabels {
+#					1 = Stil 1 - Zellen hinterlegt, Beschriftungszeile oben
+#					2 = Stil 2 - Zellen hinterlegt, Beschriftungzeilen oben und links
+#					3 = Stil 3 - Zellen liniert, Beschriftungszeile oben und fett
+#					4 = Stil 4 - Trennlinie, Zellen liniert, Beschriftungszeile oben und fett
+				}
+			}
+			bullets.disabled = 1
+			uploads.disabled = 1
+			multimedia.disabled = 1
+			swfobject.disabled = 1
+			qtobject.disabled = 1
+			media.disabled = 1
+			mailform.disabled = 1
+			search.disabled = 1
+			menu.disabled = 1
+			shortcut.disabled = 1
+			list.disabled = 1
+			div.disabled = 1
+			html.disabled = 1
+			default.disabled = 1
+			login.disabled = 1
+			gridelements_pi1.disabled = 1
+		}
+	}
+
+	linkToTop.disabled = 1
+	longdescURL.disabled = 1
+
+	media.disabled = 1
+	menu_type {
+		#removeItems = 3,4,5,6,7
+		altLabels {
+			#0 = Menu of these pages
+			#1 = Menu of subpages to these pages
+			#2 = Sitemap
+			#3 = Section index (pagecontent w/index checked)
+			#4 = Menu of subpages to these pages (with abstract)
+			#5 = Recently updated pages
+			#6 = Menu of subpages to these pages + sections
+			#7 = Related pages (based on keywords)
+		}
+	}
+	multimedia.disabled = 1
+
+	pi_flexform.table {
+		sDEF {
+#			acctables_caption.disabled = 1
+#			acctables_summary.disabled = 1
+			acctables_tfoot.disabled = 1
+			acctables_headerpos.removeItems = left
+			acctables_nostyles.disabled = 1
+			acctables_tableclass.disabled = 1
+		}
+		s_parsing {
+			tableparsing_quote.disabled = 1
+			tableparsing_delimiter.disabled = 1
+		}
+	}
+
+	recursive.disabled = 1
+	rte_enabled.disabled = 0
+
+	sectionIndex.disabled = 1
+	section_frame {
+		label = Bitte wählen Sie Ihr Layout
+		removeItems = 1,5,6,10,11,66
+		altLabels {
+			0 = Kein
+#			1 = Vierspaltig
+#			5 = Vierspaltig letztes Element
+#			6 = Zweispaltig
+#			10 = Zweispaltig letztes Element
+#			11 = 2:1, erstes Element
+			12 = article
+			20 = section
+			21 = footer
+		}
+	}
+
+	starttime.disabled = 1
+	spaceBefore.disabled = 1
+	spaceAfter.disabled = 1
+	splash_layout.disabled = 1
+#	subheader.disabled = 1
+#	sys_language_uid.disabled = 1
+
+	table_border.disabled = 1
+	table_cellspacing.disabled = 1
+	table_cellpadding.disabled = 1
+	table_bgColor.disabled = 1
+	text_face.disabled = 1
+	text_size.disabled = 1
+	text_color.disabled = 1
+	text_properties.disabled = 1
+	text_align.disabled = 1
+	titleText.disabled = 0
+#	tx_gridelements_container.disabled = 1
+#	tx_gridelements_columns.disabled = 1
+	categories.disabled = 1
+}
+
+#TCEFORM.tx_news_domain_model_media {
+#	sys_language_uid.disabled = 1
+#	width.disabled = 1
+#	height.disabled = 1
+#	title.disabled = 1
+#	copyright.disabled = 1
+#	showinpreview.disabled = 1
+#	type.disabled = 1
+#}
+
+TCEFORM.sys_file_reference {
+	alternative.disabled = 1
+	description.disabled = 1
+}
+
+#################################################################
+# HTMLAREA 6.1.0												#
+#################################################################
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TSConfig/RteTSConfig.txt">

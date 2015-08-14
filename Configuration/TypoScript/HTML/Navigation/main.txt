@@ -1,0 +1,29 @@
+lib.navigation.main = HMENU
+lib.navigation.main {
+
+	entryLevel = 0
+	excludeUidList =
+
+	stdWrap.wrap = 	<nav id="nav"> | </nav>
+
+	1 = TMENU
+	1 {
+
+		expAll = 1
+
+		wrap = <ul> | </ul>
+
+		NO.wrapItemAndSub = <li> | </li>
+		NO.ATagTitle.field = title
+		NO.htmlSpecialChars = 1
+
+
+		ACT < .NO
+		ACT = 1
+		ACT.ATagParams = class="current"
+
+	}
+
+	2 < .1
+
+}

@@ -1,0 +1,63 @@
+### OPTIONS ###################################
+
+# RTE settings
+options {
+	RTEkeyList = *
+	clearCache.clearRTECache = 1
+	HTMLAreaPspellMode = normal # (ultra,fast,bad-spellers)
+	enablePersonalDicts = 0
+	uploadFieldsInTopOfEB = 0
+	createFoldersInEB = 0
+	noThumbsInRTEimageSelect = 0
+	RTESmallWidth = 530
+	RTESmallHeight = 380
+	RTELargeWidthIncrement = 150
+	RTELargeHeightIncrement = 0
+	disableDocModuleInAB = 1
+}
+
+RTE.default.buttons {
+#	formatblock.restrictToItems = p, h1, h2, h3, h4, h5, h6, pre, address, blockquote, div, link
+#	formattext.restrictTo = *
+}
+
+## SETUP ######################################
+
+setup.default {
+
+	startModule = web_page
+	startInTaskCenter = 0
+
+	thumbnailsByDefault = 1
+
+	neverHideAtCopy = 1
+
+	titleLen = 255
+
+	edit_RTE = 1
+
+	resizeTextareas = 0
+	resizeTextareas_Flexible = 0
+	resizeTextareas_MaxHeight = 600
+
+	lang = de
+
+	enableFlashUploader = 0
+}
+
+setup.override {
+	navFrameResizable = 1
+	edit_docModuleUpload = 0
+	disableTabInTextarea = 0
+}
+
+## MODULE SETTINGS ############################
+
+mod.web_list {
+	alternateBgColors = 1
+}
+
+mod.xMOD_alt_doc {
+	#disableDocSelector = 1
+	#disableCacheSelector = 1
+}

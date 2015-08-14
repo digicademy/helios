@@ -1,0 +1,49 @@
+temp.colPos_0 = CONTENT
+temp.colPos_0 {
+
+	table = tt_content
+	select.orderBy = sorting
+	select.where = colPos=0
+	select.languageField = sys_language_uid
+
+}
+
+temp.colPos_1 < temp.colPos_0
+temp.colPos_1 {
+	select.where = colPos=1
+}
+
+temp.colPos_2 < temp.colPos_0
+temp.colPos_2 {
+	select.where = colPos=2
+}
+
+temp.colPos_3 < temp.colPos_0
+temp.colPos_3 {
+	select.where = colPos=3
+}
+
+temp.colPos_4 < temp.colPos_0
+temp.colPos_4 {
+	select.where = colPos=4
+}
+
+temp.colPos_5 < temp.colPos_0
+temp.colPos_5 {
+	select.where = colPos=5
+}
+
+temp.colPos_6 < temp.colPos_0
+temp.colPos_6 {
+	select.where = colPos=6
+}
+
+temp.colPos_7 < temp.colPos_0
+temp.colPos_7 {
+	select.where = colPos=7
+}
+
+temp.colPos_8 < temp.colPos_0
+temp.colPos_8 {
+	select.where = colPos=8
+}

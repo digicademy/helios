@@ -1,0 +1,46 @@
+page {
+
+	## favicon ##
+
+	## shortcutIcon = EXT:helios/Resources/Public/Images/favicon.ico
+
+	## CSS ##
+
+	includeCSS {
+
+		## webfonts ##
+
+#		file10 = http://fonts.googleapis.com/css?family=Molengo
+#		file10.external = 1
+#		file10.disableCompression = 1
+
+		## main stylesheet ##
+
+		file20 = EXT:helios/Resources/Public/CSS/main.css
+		file20.disableCompression = 1
+
+		file25 = EXT:helios/Resources/Public/CSS/custom.css
+		file25.disableCompression = 1
+
+		file30 = EXT:helios/Resources/Public/CSS/ie8.css
+		file30.wrap = <!--[if lte IE 8]>|<![endif]-->
+		file30.disableCompression = 1
+
+	}
+
+}
+
+## basic head stuff ##
+
+page.headerData.10 = TEXT
+page.headerData.10.insertData = 1
+page.headerData.10.value (
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!--[if lte IE 8]><script src="{path:EXT:helios/Resources/Public/JS/Ie/html5shiv.js}"></script><![endif]-->
+)
+
+## title tag ##
+
+page.headerData.3000 < temp.titletag

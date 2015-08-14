@@ -1,0 +1,58 @@
+backend_layout {
+	colCount = 3
+	rowCount = 5
+	rows {
+		1 {
+			columns {
+				1 {
+					name = Banner
+					colPos = 2
+					colspan = 3
+				}
+			}
+		}
+		2 {
+			columns {
+				1 {
+					name = Carousel
+					colPos = 1
+					colspan = 3
+				}
+			}
+		}
+		3 {
+			columns {
+				1 {
+					name = Main content
+					colPos = 0
+					colspan = 3
+				}
+			}
+		}
+		4 {
+			columns {
+				1 {
+					name = Teaser Header
+					colPos = 3
+					colspan = 3
+				}
+			}
+		}
+		5 {
+			columns {
+				1 {
+					name = Teaser 1
+					colPos = 4
+				}
+				2 {
+					name = Teaser 2
+					colPos = 5
+				}
+				3 {
+					name = Teaser 3
+					colPos = 6
+				}
+			}
+		}
+	}
+}

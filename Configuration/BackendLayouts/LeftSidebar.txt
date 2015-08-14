@@ -1,0 +1,20 @@
+backend_layout {
+	colCount = 2
+	rowCount = 1
+	rows {
+		1 {
+			columns {
+				1 {
+					name = Sidebar
+					colPos = 1
+					colspan = 1
+				}
+				2 {
+					name = Maincontent
+					colPos = 0
+					colspan = 1
+				}
+			}
+		}
+	}
+}

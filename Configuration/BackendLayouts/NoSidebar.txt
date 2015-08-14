@@ -1,0 +1,15 @@
+backend_layout {
+	colCount = 1
+	rowCount = 1
+	rows {
+		1 {
+			columns {
+				1 {
+					name = Maincontent
+					colPos = 0
+					colspan = 3
+				}
+			}
+		}
+	}
+}

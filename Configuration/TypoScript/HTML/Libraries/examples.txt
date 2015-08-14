@@ -1,0 +1,298 @@
+lib.typoscript.examples = COA
+lib.typoscript.examples {
+
+  # TEXT
+
+  10 = TEXT
+  10.value = Hello World
+
+  11 < .10
+  11.value = Hello Galaxy
+
+  12 < .10
+  12.value = Hello Universe
+  12.wrap = <h1>|</h1>
+
+  # IMAGE
+
+  20 = IMAGE
+  20 {
+    file = EXT:helios/Resources/Public/Images/pic01.jpg
+    altText = My first picture
+    wrap = <p>|</p>
+  }
+
+  21 = IMAGE
+  21 {
+    wrap = <p>|</p>
+
+    file = GIFBUILDER
+    file {
+
+      format = gif
+      transparentBackground = 1
+      XY = 200,40
+
+      10 = TEXT
+      10 {
+        text = Hello World
+        fontColor = red
+        fontSize = 18
+        offset = 40,20
+        niceText = 1
+        shadow = SHADOW
+        shadow {
+          offset = 1,1
+          color = #333333
+          blur = 10
+          intensity = 20
+        }
+      }
+    }
+  }
+
+  22 < .21
+  22.file.10 {
+    text = Raleway Font
+    fontFile = FILE:EXT:helios/Resources/Public/Fonts/raleway_thin.otf
+    fontSize = 24
+  }
+
+  23 < .21
+  23 {
+    file {
+      XY = [5.w],[5.h]
+      format = jpg
+
+      5 = IMAGE
+      5.file = EXT:helios/Resources/Public/Images/pic02.jpg
+
+      10.text = OMG!
+      10.offset = 100,100
+      10.fontColor = #FFFFFF
+      10.fontSize = 36
+      10.shadow >
+    }
+  }
+
+  # stdWrap
+
+  ## wraps
+  30 = TEXT
+  30 {
+    value = Zwiebel
+    wrap = Schale1 | Schale1
+    wrap2 = Schale2 | Schale2
+    wrap3 = <p>|</p>
+
+  }
+
+  ## cObject
+  31 = TEXT
+  31 {
+    cObject = TEXT
+    cObject.value = Igel
+    noTrimWrap = |<p>| Hase</p>|
+
+  }
+
+  ## prioriCalc
+  32 = TEXT
+  32 {
+    value = (4+4)/2
+    prioriCalc = intval
+    wrap = <p>|</p>
+  }
+
+  ## timestamp
+  33 = TEXT
+  33 {
+    wrap = <p>|</p>
+    value = 1340087650
+    strftime = %A, %d. %B %Y
+  }
+
+  ## listNum
+  34 = TEXT
+  34 {
+    value = Rot,Grün,Blau
+    listNum = last-1
+    wrap = <p>|</p>
+  }
+
+  # getText
+
+  ## data + COA_INT
+  40 = TEXT
+  40 {
+    data = date:U
+    wrap = <p>|</p>
+    strftime = %H:%M:%S
+  }
+
+  ## pagetitle
+  41 = TEXT
+  41 {
+    data = page:title
+    wrap = <h1>|</h1>
+  }
+
+  ## debug
+  42 = TEXT
+  42 {
+    debugData = 1
+  }
+
+  43 = LOAD_REGISTER
+  43 {
+    bug.cObject = TEXT
+    bug.cObject.value = Käfer
+    bug.debugFunc = 2
+  }
+
+  44 = TEXT
+  44 {
+    data = register:bug
+    wrap = <p>Marien|</p>
+  }
+
+  ## TSFE:id
+  45 = TEXT
+  45 {
+    dataWrap = Seite hat die ID: {TSFE:id}
+  }
+
+  ## if
+  46 = TEXT
+  46 {
+    value = <p>Lorem ipsum</p>
+    if {
+      value = 18
+      equals.data = TSFE:id
+    }
+  }
+
+  # CONTENT
+  50 = CONTENT
+  50 {
+    wrap = <pre>|</pre>
+    table = tt_content
+    select.pidInList.data = leveluid : 0
+    renderObj = TEXT
+    renderObj {
+      field = bodytext
+    }
+  }
+
+  # option split
+  51 < .50
+  51 {
+    wrap = <table border="1">|</table>
+    renderObj {
+      split {
+        token.char = 10
+        cObjNum = 1
+        1 = TEXT
+        1 {
+          current = 1
+          wrap = <tr>|</tr>
+          split {
+            token = |
+            cObjNum = 1
+            1 = TEXT
+            1.current = 1
+            1.wrap = <td border="1">|</td>
+          }
+        }
+      }
+    }
+  }
+
+  # HMENU
+
+  60 = HMENU
+  60 {
+    entryLevel = 0
+
+    1 = TMENU
+    1 {
+      expAll = 1
+      noBlur = 1
+
+      wrap = <ul>|</ul>
+
+      NO.wrapItemAndSub = <li>|</li>
+    }
+
+    2 < .1
+  }
+}
+
+lib.typoscript.examples.xpath = COA
+lib.typoscript.examples.xpath {
+
+  10 = XPATH
+  10 {
+
+    source = fileadmin/user_upload/xpath/collection.xml
+
+    return = xml
+
+    expression = //collection
+
+    resultObj.cObjNum = 1
+    resultObj.1.current = 1
+
+    stdWrap {
+      outerWrap = <code>|</code>
+      htmlSpecialChars = 1
+    }
+  }
+
+  15 < .10
+  15 {
+
+    return = string
+
+    expression = //title
+
+    resultObj {
+      cObjNum = 1 || 2
+
+      1.current = 1
+      1.wrap = <h1 style="color:red;">|</h1>
+
+      2.current = 1
+      2.wrap = <h1 style="color:green;">|</h1>
+    }
+
+    stdWrap >
+  }
+
+  20 < .10
+  20 {
+    source.cObject = FILE
+    source.cObject.file = fileadmin/user_upload/xpath/book.xml
+
+    return = string
+
+    registerNamespace = c|http://example.org/chapter-title
+    registerNamespace {
+      getFromSource = 1
+      getFromSource.debug = 1
+      getFromSource.listNum = 0
+    }
+
+    expression = //c:title
+
+    resultObj {
+      cObjNum = 1
+      1.current = 1
+      1.noTrimWrap = |<p><strong>Namespace-Test: |</strong></p>|
+
+    }
+
+    stdWrap >
+  }
+
+}

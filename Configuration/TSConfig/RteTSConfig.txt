@@ -1,0 +1,359 @@
+# out with any existing config whatsoever
+RTE >
+
+#################################################################
+# HTMLAREA 6.1.0: Classes & Color settings						#
+#################################################################
+
+# RTE.classesAnchor {}
+# RTE.colors {}
+# RTE.fonts {}
+# RTE.fontSizes {}
+
+#################################################################
+# HTMLAREA 6.1.0: General settings								#
+#################################################################
+
+RTE.default {
+
+	# specify the skin of the editor (CSS file and button images):
+	# skin = EXT:rtehtmlarea/htmlarea/skins/default/htmlarea.css
+
+	# specify the CSS file that contains the style definitions that should be applied to the edited contents
+	contentCSS = EXT:website/Resources/Public/CSS/rte.css
+
+	# specify if CSS classes not associated with any tag in the contentCSS style sheet should be shown in the block style selection list
+	#showTagFreeClasses = 0
+
+	# specify CSS classes that may be applied to selected text:
+	classesCharacter = underline
+
+	# specify CSS classes that may be applied to images in the Insert/Modify image dialog:
+	#classesImage =
+
+	# specify CSS classes that may be applied to links in the Insert/Modify link dialog:
+#	classesAnchor (
+#		more,
+#		button
+#	)
+
+	# specify CSS classes available for tables
+	#classesTable =
+	#classesTD =
+
+	# This sets default target for new links in RTE
+	defaultLinkTarget =
+
+	## Configuration of links: These classes should also be in the list proc.allowedClasses
+	buttons.link {
+#		page.properties.class.default =
+#		url.properties.class.default =
+#		file.properties.class.default =
+#		external.properties.class.default =
+#		mail.properties.class.default =
+
+		targetSelector.disabled = 1
+		popupSelector.disabled = 1
+
+		properties.title.readOnly = 1
+
+#		properties.class.allowedClasses (
+#			more,
+#			button,
+#		)
+	}
+
+	# specify if you want text pasted from Microsoft Word to be cleaned or not:
+	enableWordClean = 0
+
+	# specify if you want html comments to be removed or not:
+	removeComments = 1
+
+	# specify a list of tags that you want to have removed
+	removeTags = o:p, sdfield
+
+	# specify a list of tags that you want to be removed, including the contents inside the tags:
+	removeTagsAndContents = style, script
+
+	# specify if you want Mozilla/Firefox to operate in native mode (Mozilla/Firefox editing engine will use span tags with style attributes rather than tags such as b, i, font, etc.):
+	useCSS = 0
+
+	# specify the RTE buttons that must be shown (Note: this and next option together are a list of ALL available buttons):
+	showButtons (
+		textstylelabel, textstyle,
+		orderedlist, unorderedlist, definitionlist, definitionitem,
+		outdent, indent,
+		citation, quotation, blockquote, emphasis, italic, strong, bold,
+		link, unlink,
+		findreplace, spellcheck,
+		removeformat,
+		copy, cut, paste, undo, redo, bar, chMode
+	)
+
+	# Note: Buttons textcolor, bgcolor, fontstyle and fontsize are enabled only if «Enable features that use the style attribute> is checked in the extension manager.
+	# Note: If extension static_info_tables is not installed, the spellcheck, language and acronym buttons are not enabled.
+	# Note: If the encoding of the content element is not either iso-8859-1 or utf-8, the spellcheck button is not enabled.
+	# Note: Buttons user and acronym are never available in the front end.
+	# Note: Button unlink is not available if button link is not available.
+	# Note: None of the table operations buttons is available if the button table is not available.
+	# Note: Opera, Safari 5+ and Chrome 6+ do not support the copy, cut and paste buttons.
+
+	# specify the RTE buttons that must NOT be shown:
+	hideButtons (
+		blockstylelabel, blockstyle,
+		formatblock,
+		language, showlanguagemarks,
+		fontstyle, fontsize, formattext, deletedtext, insertedtext, code, strikethrough, subscript, superscript,
+		bidioverride, insertparagraphbefore, insertparagraphafter, lefttoright, righttoleft,
+		left, center, right, justifyfull, definition,
+		big, keyboard, monospaced, sample, small, span, underline, variable,
+		textcolor, bgcolor, textindicator, emoticon, insertcharacter, line,
+		image, table, user, acronym, toggleborders,
+		showhelp, about,
+		inserttag,
+		tableproperties, tablerestyle, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, columnproperties, columninsertbefore, columninsertafter, columndelete, columnsplit, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge
+	)
+
+	# specify the order and grouping of buttons in the RTE tool bar:
+	toolbarOrder (
+		blockstylelabel, blockstyle, formatblock,
+		textstylelabel, textstyle, formattext,
+		lefttoright, righttoleft, language, showlanguagemarks, copy, cut, paste, undo, redo, bar, inserttag, removeformat, chMode, bar, findreplace, spellcheck, linebreak,
+		link, unlink, image, bar, bold,  strong, italic, emphasis, big, small, insertedtext, deletedtext, citation, code, definition, keyboard, monospaced, quotation, blockquote, sample, variable, bidioverride, strikethrough, subscript, superscript, underline, span, bar,
+		fontstyle, space, fontsize, textcolor, bgcolor, textindicator,
+		insertparagraphbefore, insertparagraphafter,
+		left, center, right, justifyfull,
+		orderedlist, unorderedlist, definitionlist, definitionitem, outdent, indent,
+		emoticon, insertcharacter, line, bar,
+		user, acronym,
+		showhelp, about, linebreak,
+		table, toggleborders, tableproperties, tablerestyle, rowproperties, rowinsertabove, rowinsertunder, rowdelete, rowsplit, bar, columnproperties, columninsertbefore, columninsertafter, columndelete, columnsplit, bar, cellproperties, cellinsertbefore, cellinsertafter, celldelete, cellsplit, cellmerge
+	)
+
+	# specifies that all buttons of a group are displayed on the same line of the toolbar
+	keepButtonGroupTogether = 1
+
+	# do not show table operations buttons in the toolbar
+	hideTableOperationsInToolbar = 1
+
+	# disable the context menu:
+	disableContextMenu = 0
+
+	# List of buttons that should be shown in the context menu
+	contextMenu.showButtons =
+
+	# this could stop right clicking
+	#disableRightClick = 1
+
+	# disable the TYPO3 image and page browsers:
+	disableTYPO3Browsers = 0
+
+	# disable the configurable color selection popup:
+	disableSelectColor = 1
+
+	# disable the insertion of paragraphs when hitting the Enter key in Mozilla/Firefox:
+	disableEnterParagraphs = 0
+
+	# remove trailing br tags from block elements ( If set, any trailing br tag in a block element will be removed on save and/or change mode. However, multiple trailing br tags will be preserved)
+	removeTrailingBR = 1
+
+	# specify the default paragraph styles that must NOT be shown (list of values among the following: P, H1, H2, H3, H4, H5, H6, PRE, ADDRESS)
+	hidePStyleItems = div,address,h6
+
+	# specify the default font sizes that must NOT be shown (list of values among the following: 1, 2, 3, 4, 5, 6, 7):
+	#hideFontSizes =
+
+	# disable, or do not disable, the color picker presented by the color selection wizard; if the color picker is disabled, only the defined colors will be presented:
+	disableColorPicker = 1
+
+	# specify if the editor status bar should be displayed or not:
+	showStatusBar = 1
+
+	# userElements
+	# userElements =
+
+	# userLinks
+	# userLinks =
+
+	# Note: Any value other than 'en' requires Static Info Tables to be installed
+	defaultContentLanguage = de
+
+	# List of language ISO codes to which the language marking drop-down list is limited to
+	buttons.language.restrictToItems = de,en
+
+	# Configuration of microdata schema
+	schema {
+		sources {
+			schemaOrg = EXT:rtehtmlarea/extensions/MicrodataSchema/res/schemaOrgAll.rdf
+		}
+	}
+
+}
+
+#################################################################
+# HTMLAREA 6.1.0: HTML Processing settings						#
+#################################################################
+
+RTE.default {
+
+	# specify the RTE default processing options:
+	proc {
+
+		# TRANSFORMATION METHOD
+		overruleMode = ts_css,user_transformations
+
+		# LINES CONVERSION: br tags in the content are assumed to be intentional
+		dontConvBRtoParagraph = 1
+
+		# BRING FONT TAGS INSIDE PARAGRAPHS
+		internalizeFontTags = 1
+
+		# REMAP TAGS TO P TAGS
+		remapParagraphTag = p
+
+		# PRESERVE DIV SECTIONS - DO NOT REMAP TO P
+		preserveDIVSections = 1
+
+		# TAGS ALLOWED OUTSIDE P & DIV
+		allowTagsOutside = blockquote, hr, table, ol, ul, dl
+
+		# TAGS ALLOWED
+		allowTags (
+			a, abbr, acronym, b, bdo, blockquote, br, cite, sup, sub,
+			dd, dfn, div, dl, dt, em, i, li, link, code, pre,
+			ol, p, q, span, strong, ul, strike, del, ins,
+			note
+		)
+
+		# TAGS DENIED
+		denyTags (
+			applet, address, area, basefont, bgsound, big, blink, body, button,
+			caption, center, col, colgroup, comment, dir, embed,
+			fieldset, font, form, frame, frameset, head, html, hr,
+			iframe, ilayer, img, input, isindex, kbd, keygen, label, layer, legend, listing,
+			map, marquee, menu, meta, multicol, nobr, noembed, noframes, nolayer, noscript,
+			object, optgroup, option, param, plaintext, rb, rbc, rtc, rp, rt, ruby,
+			s, samp, script, select, small, spacer, style, u, var, wbr, xml, xmp, title, textarea,
+			table, tbody, td, tfoot, th, thead, tr, tt,
+		)
+
+		# ALLOW TO WRITE ABOUT HTML
+		dontUndoHSC_db = 1
+		dontHSC_rte = 1
+
+		# ALLOWED P & DIV ATTRIBUTES
+		keepPDIVattribs = class, lang
+
+		# ALLOWED CLASSES
+		allowedClasses = underline
+
+		# CONTENT => DATABASE
+		entryHTMLparser_db = 1
+		entryHTMLparser_db {
+
+			# TAGS ALLOWED
+			allowTags < RTE.default.proc.allowTags
+
+			# AVOID HSC TWICE
+			htmlSpecialChars = -1
+
+			# CLEANING OF TAGS
+			tags {
+
+				a {
+					#allowedAttribs = class, title, id, lang
+					#fixAttrib.class.list = box,icon,more
+					#fixAttrib.class.default = more
+				}
+
+				# CLEAN ATTRIBUTES ON ENTRY
+				img.allowedAttribs = 0
+				img.rmTagIfNoAttrib = 1
+
+				span.fixAttrib.style.unset = 1
+				span.fixAttrib.lang.lower = 1
+				span.fixAttrib.dir.lower = 1
+				span.rmTagIfNoAttrib = 1
+
+				bdo.allowedAttribs = id, title, dir, lang, class
+				bdo.fixAttrib.dir.set = ltr
+
+				p {
+					allowedAttribs = id, lang
+					fixAttrib {
+						align.unset = 1
+						class.unset = 1
+					}
+				}
+
+				div < .p
+				hr.allowedAttribs = class
+				b.allowedAttribs = id, title, dir, lang, class
+				big.allowedAttribs = id, title, dir, lang, class
+				blockquote.allowedAttribs = id, title, dir, lang, class
+				cite.allowedAttribs = id, title, dir, lang, class
+				code.allowedAttribs = id, title, dir, lang, class
+				del.allowedAttribs = id, title, dir, lang, class
+				dfn.allowedAttribs = id, title, dir, lang, class
+				em.allowedAttribs = id, title, dir, lang, class
+				i.allowedAttribs = id, title, dir, lang, class
+				ins.allowedAttribs = id, title, dir, lang, class
+				kbd.allowedAttribs = id, title, dir, lang, class
+				label.allowedAttribs = id, title, dir, lang, class
+				q.allowedAttribs = id, title, dir, lang, class
+				samp.allowedAttribs = id, title, dir, lang, class
+				small.allowedAttribs = id, title, dir, lang, class
+				strike.allowedAttribs = id, title, dir, lang, class
+				strong.allowedAttribs = id, title, dir, lang, class
+				sub.allowedAttribs = id, title, dir, lang, class
+				sup.allowedAttribs = id, title, dir, lang, class
+				tt.allowedAttribs = id, title, dir, lang, class
+				u.allowedAttribs = id, title, dir, lang, class
+				var.allowedAttribs = id, title, dir, lang, class
+
+			}
+
+			# REMOVE OPEN OFFICE META DATA TAGS, WORD 2003 TAGS AND DEPRECATED HTML TAGS
+			removeTags = center, font, o:p, sdfield, meta, style, title, strike, u
+
+			# PROTECT CUSTOM TAGS
+			keepNonMatchedTags = protect
+		}
+
+		HTMLparser_db {
+
+				# STRIP ALL ATTRIBUTES FROM THESE TAGS
+				# However, we want to keep xml:lang attribute on most tags and tags from the default list where cleaned on entry.
+				noAttrib = br
+
+				# XHTML COMPLIANCE
+				# Note that applying xhtml_cleaning on exit would break non-standard attributes of typolink tags
+				xhtml_cleaning = 1
+		}
+
+		# DATABASE => CONTENT / FE
+		exitHTMLparser_db = 1
+		exitHTMLparser_db {
+
+				# KEEP ALL TAGS - Unwanted tags were removed on entry.
+				# Without this rule, the parser will remove all tags! Presumably, this rule will be more efficient than repeating the allowTags rule
+				keepNonMatchedTags = 1
+
+				# AVOID CONTENT BEING HSC'ed TWICE
+				htmlSpecialChars = 0
+
+				# REMAP B AND I TAGS - b and i tags are used by Mozilla/Firefox in editing mode.
+				# This must be done on exit because the default HTMLparser_db parsing executes the reverse mapping.
+				tags.b.remap = strong
+				tags.i.remap = em
+		}
+
+		# ENABLE USER PROCESSING
+		usertrans.user_transformations = 1
+
+	}
+}
+
+# front end RTE configuration
+# RTE.default.FE < RTE.default
+# RTE.default.FE.proc < RTE.default.proc

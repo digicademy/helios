@@ -1,0 +1,55 @@
+# Don't forget to adjust RTE.default.proc in page TS Config as well!!!
+lib.parseFunc {
+
+	allowTags (
+		a, abbr, acronym, b, blockquote, br, cite,
+		dd, dfn, div, dl, dt, em, hr, i, li, link,
+		ol, p, q, span, strong, ul, sup, sub, u,
+		h1, h2, h3, h4, h5,
+		img,
+		section, footer
+	)
+
+	denyTags (
+		address, applet, area, basefont, bdo, bgsound, big, blink, body, button,
+		caption, center, code, col, colgroup, comment, del, dir, embed,
+		fieldset, font, form, frame, frameset, head, html,
+		iframe, ilayer, input, ins, isindex, kbd, keygen, label, layer, legend, listing,
+		map, marquee, menu, meta, multicol, nobr, noembed, noframes, nolayer, noscript,
+		object, optgroup, option, param, plaintext, pre, rb, rbc, rtc, rp, rt, ruby,
+		s, samp, script, select, small, spacer, strike, style,
+		table, tbody, td, textarea, tfoot, th, thead, title, tr, tt, var, wbr, xml, xmp
+	)
+
+	constants >
+
+	makelinks.http.extTarget >
+}
+
+# Creates persistent ParseFunc setup for RTE content (which is mainly HTML) based on the "ts_css" transformation.
+
+lib.parseFunc_RTE < lib.parseFunc
+lib.parseFunc_RTE {
+
+	nonTypoTagStdWrap.encapsLines {
+
+		encapsTagList = div,p,pre,h1,h2,h3,h4,h5,h6,blockquote,ul,ol,dl,article,header,section,footer,img
+
+		remapTag.DIV = P
+		nonWrappedTag = P
+		innerStdWrap_all.ifBlank = &nbsp;
+
+		# out with p.bodytext
+		addAttributes >
+	}
+
+	makelinks.http.extTarget >
+
+	constants >
+}
+
+# links without target
+lib.parseFunc.tags.link.typolink.extTarget =
+lib.parseFunc.tags.link.typolink.target =
+lib.parseFunc_RTE.tags.link.typolink.extTarget =
+lib.parseFunc_RTE.tags.link.typolink.target =

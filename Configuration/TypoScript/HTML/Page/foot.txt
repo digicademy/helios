@@ -1,0 +1,26 @@
+## foot of the page (before closing body tag) ##
+
+page.20 = COA
+page.20 {
+
+	## JS libraries ##
+
+	5 = TEXT
+	5.insertData = 1
+	5.value (
+		<script src="{path:EXT:helios/Resources/Public/JS/jquery.min.js}"></script>
+		<script src="{path:EXT:helios/Resources/Public/JS/jquery.dropotron.min.js}"></script>
+		<script src="{path:EXT:helios/Resources/Public/JS/jquery.scrolly.min.js}"></script>
+		<script src="{path:EXT:helios/Resources/Public/JS/jquery.onvisible.min.js}"></script>
+		<script src="{path:EXT:helios/Resources/Public/JS/skel.min.js}"></script>
+		<script src="{path:EXT:helios/Resources/Public/JS/util.js}"></script>
+		<!--[if lte IE 8]><script src="{path:EXT:helios/Resources/Public/JS/Ie/respond.min.js}"></script><![endif]-->
+		<script src="{path:EXT:helios/Resources/Public/JS/main.js}"></script>
+	)
+
+
+	## PIWIK ##
+
+#	20 < temp.piwik
+
+}

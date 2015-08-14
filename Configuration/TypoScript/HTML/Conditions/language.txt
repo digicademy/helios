@@ -1,0 +1,10 @@
+[globalVar = GP:L = 1]
+
+config {
+	sys_language_uid = 1
+	language = en
+	locale_all = en_EN.utf8
+	htmlTag_setParams = lang="en"
+}
+
+[global]

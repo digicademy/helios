@@ -1,0 +1,56 @@
+page.10 = CASE
+page.10 {
+
+	key.data = field : backend_layout // levelfield : -1, backend_layout_next_level, slide
+
+	default = FLUIDTEMPLATE
+	default {
+
+		file.dataWrap = {path:EXT:helios/Resources/Private/HTML/Templates/NoSidebar.html}
+		layoutRootPath.dataWrap = {path:EXT:helios/Resources/Private/HTML/Layouts/}
+		partialRootPath.dataWrap = {path:EXT:helios/Resources/Private/HTML/Partials/}
+
+		variables {
+			header < temp.header
+			colPos_0 < temp.colPos_0
+		}
+
+	}
+
+	5 < .default
+	5 {
+		file.dataWrap = {path:EXT:helios/Resources/Private/HTML/Templates/Home.html}
+
+		variables {
+			colPos_2 < temp.colPos_2
+			colPos_1 < temp.colPos_1
+			colPos_3 < temp.colPos_3
+			colPos_4 < temp.colPos_4
+			colPos_5 < temp.colPos_5
+			colPos_6 < temp.colPos_6
+			colPos_7 < temp.colPos_7
+			colPos_8 < temp.colPos_8
+			colPos_9 < temp.colPos_9
+		}
+	}
+
+	6 < .default
+	6 {
+		file.dataWrap = {path:EXT:helios/Resources/Private/HTML/Templates/LeftSidebar.html}
+
+		variables {
+			colPos_1 < temp.colPos_1
+		}
+	}
+
+	7 < .6
+	7 {
+		file.dataWrap = {path:EXT:helios/Resources/Private/HTML/Templates/RightSidebar.html}
+	}
+
+	9 < .default
+	9 {
+		file.dataWrap = {path:EXT:helios/Resources/Private/HTML/Templates/TypoScript.html}
+	}
+
+}

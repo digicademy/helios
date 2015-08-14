@@ -1,0 +1,6 @@
+## ADMPANEL ###################################
+
+admPanel {
+	enable = 1
+	enable.all = 1
+}

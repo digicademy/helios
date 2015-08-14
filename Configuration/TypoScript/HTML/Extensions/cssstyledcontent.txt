@@ -1,0 +1,100 @@
+# CLEAR STUFF ###########################################################################
+
+## always generate <header> tags for Helios
+lib.stdheader.stdWrap.dataWrap.override.if.isTrue >
+
+## always wrap subheader in <p> tags
+lib.stdheader.20.default.wrap = <p>|</p>
+lib.stdheader.20.1 >
+lib.stdheader.20.2 >
+lib.stdheader.20.3 >
+lib.stdheader.20.4 >
+lib.stdheader.20.5 >
+
+# out with any spacing before/after
+tt_content.stdWrap.spaceBefore >
+tt_content.stdWrap.spaceAfter >
+tt_content.stdWrap.space >
+
+# clear innerWrap settings
+tt_content.stdWrap.innerWrap >
+tt_content.stdWrap.prepend >
+
+# SECTIONS ##############################################################################
+
+# reinsert the "classic" section frame from TYPO3 < 4.3
+tt_content.stdWrap {
+
+	innerWrap.cObject = CASE
+	innerWrap.cObject {
+
+		key.field = section_frame
+
+		1 = TEXT
+		1.value = <div class="csc-frame csc-frame-invisible">|</div>
+
+		5 = TEXT
+		5.value = <div class="csc-frame csc-frame-rulerBefore"></div>|
+
+		6 = TEXT
+		6.value = |<div class="csc-frame csc-frame-rulerAfter"></div>
+
+		10 = TEXT
+		10.value = <div class="csc-frame csc-frame-indent">|</div>
+
+		11 = TEXT
+		11.value = <div class="csc-frame csc-frame-indent3366">|</div>
+
+		12 = TEXT
+		12.value = <article>|</article>
+
+		20 = TEXT
+		20.value = <section class="csc-frame csc-frame-1">|</section>
+
+		21 = TEXT
+		21.value = <footer class="csc-frame csc-frame-2">|</footer>
+	}
+
+	innerWrap2 = | <p class="csc-linkToTop"><a href="#">{LLL:EXT:css_styled_content/pi1/locallang.xml:label.toTop}</a></p>
+	innerWrap2.insertData = 1
+	innerWrap2.fieldRequired = linkToTop
+
+#	preCObject = TEXT
+#	preCObject {
+#		outerWrap = <a id="c{field:uid}"></a> |
+#		outerWrap.override = <a id="c{field:_LOCALIZED_UID}"></a>
+#		outerWrap.override.if.isTrue.field = _LOCALIZED_UID
+#		insertData = 1
+#	}
+
+}
+
+# TEXTPIC ##############################################################################
+
+tt_content.textpic >
+tt_content.textpic = COA
+tt_content.textpic {
+	10 = FILES
+	10 {
+		references {
+			table = tt_content
+			uid.field = uid
+			fieldName = image
+		}
+		renderObj = IMAGE
+		renderObj {
+			file.import.data = file:current:uid
+			file.treatIdAsReference = 1
+			altText.data = file:current:title
+			imageLinkWrap = 1
+			imageLinkWrap  {
+				enable.data = file:current:link
+				typolink.parameter.data = file:current:link
+				typolink.ATagParams = class="image featured"
+
+			}
+		}
+	}
+	20 =< lib.stdheader
+	30 =< tt_content.text.20
+}

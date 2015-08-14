@@ -1,0 +1,17 @@
+<f:layout name="Home" />
+
+<f:section name="Content">
+
+	<f:render partial="ColPos_2_SectionBanner" arguments="{_all}" />
+
+	<f:render partial="ColPos_1_SectionCarousel" arguments="{_all}" />
+
+	<div class="wrapper style2">
+		<f:render partial="ColPos_0_ArticleMain" arguments="{data : data, settings : settings, colPos_0 : colPos_0, class: 'special'}" />
+	</div>
+
+	<div class="wrapper style1">
+		<f:render partial="ColPos_3456_SectionFeatures" arguments="{_all}" />
+	</div>
+
+</f:section>

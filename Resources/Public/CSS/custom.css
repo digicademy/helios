@@ -1,0 +1,7 @@
+.homepage section.special header,
+.homepage section.special footer,
+.homepage article.special header,
+.homepage article.special footer,
+.homepage article.special footer p {
+	text-align: center;
+}
