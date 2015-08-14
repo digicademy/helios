@@ -7,6 +7,7 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/Libraries/stripHTML.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/Libraries/titletag.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/Libraries/getBodyClass.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/Libraries/xpath.txt">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/Libraries/examples.txt">
 
 ##############

@@ -1,0 +1,13 @@
+xml {
+
+	config {
+		disableAllHeaderCode = 1
+		xhtml_cleaning = none
+		admPanel = 0
+		metaCharset = utf-8
+		locale_all = de_DE.utf-8
+		additionalHeaders = Content-Type:text/xml;charset=utf-8
+		disablePrefixComment = 1
+	}
+
+}

@@ -1,0 +1,11 @@
+xml.10 = FLUIDTEMPLATE
+xml.10 {
+
+	file.dataWrap = {path:EXT:helios/Resources/Private/XML/Templates/Page.xml}
+	layoutRootPath.dataWrap = {path:EXT:helios/Resources/Private/XML/Layouts/}
+	partialRootPath.dataWrap = {path:EXT:helios/Resources/Private/XML/Partials/}
+
+	variables {
+	}
+
+}

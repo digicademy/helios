@@ -296,3 +296,35 @@ lib.typoscript.examples.xpath {
   }
 
 }
+
+lib.typoscript.examples.xslt = COA_INT
+lib.typoscript.examples.xslt.10 = FLUIDTEMPLATE
+lib.typoscript.examples.xslt.10 {
+
+  file = fileadmin/user_upload/xpath/Poe.html
+  variables {
+
+    title < lib.xpath
+    title.expression = /TEI.2/text/front/titlePage/docTitle/titlePart
+
+    author < lib.xpath
+    author.expression = /TEI.2/text/front/titlePage/docAuthor
+  }
+}
+
+[globalVar = GP : tale >= 1]
+lib.typoscript.examples.xslt.10.variables {
+
+  tale = XSLT
+  tale {
+    source.cObject < lib.xpath
+    source.cObject {
+      expression = /TEI.2/text/body/div1/div2[{GP : tale}]
+      expression.insertData = 1
+      return = xml
+    }
+    transformations.1.stylesheet = fileadmin/user_upload/xpath/poe.xsl
+  }
+
+}
+[global]

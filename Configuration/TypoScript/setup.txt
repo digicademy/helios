@@ -1,3 +1,7 @@
 ## HTML output ##
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/HTML/setup.txt">
+
+## XML output ##
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:helios/Configuration/TypoScript/XML/setup.txt">

@@ -1,0 +1,13 @@
+xml = PAGE
+xml {
+	typeNum = 313
+}
+
+[globalVar = TSFE:type = 313]
+
+	lib.stdheader >
+	tt_content.stdWrap.innerWrap >
+	tt_content.stdWrap.wrap >
+	styles.content.get.stdWrap >
+
+[global]

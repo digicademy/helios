@@ -1,0 +1,9 @@
+lib.xpath = XPATH
+lib.xpath {
+  source = fileadmin/user_upload/xpath/poe.xml
+  return = string
+  resultObj {
+    cObjNum = 1
+    1.current = 1
+  }
+}
